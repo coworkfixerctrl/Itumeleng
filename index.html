@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- ==== SEO / social. Replace REPLACE-WITH-YOUR-URL once the site is live. ==== -->
+<meta name="description" content="Itumeleng David Kgongwane - industrial strategy, capital markets and South African macro. Research notes, analytical frameworks, and a nineteen-year industrial track record.">
+<meta name="author" content="Itumeleng David Kgongwane">
+<link rel="canonical" href="REPLACE-WITH-YOUR-URL">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Itumeleng David Kgongwane - Research Notes">
+<meta property="og:description" content="Itumeleng David Kgongwane - industrial strategy, capital markets and South African macro. Research notes, analytical frameworks, and a nineteen-year industrial track record.">
+<meta property="og:url" content="REPLACE-WITH-YOUR-URL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Itumeleng David Kgongwane - Research Notes">
+<meta name="twitter:description" content="Itumeleng David Kgongwane - industrial strategy, capital markets and South African macro. Research notes, analytical frameworks, and a nineteen-year industrial track record.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E1F33'/%3E%3Crect x='14' y='46' width='36' height='3' fill='%23BE8227'/%3E%3Ctext x='32' y='40' font-family='Georgia,serif' font-size='32' fill='%23EEF1F4' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+
+<!-- ==== Base reset ==== -->
+<style>
+  :root{ color-scheme: light dark; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  body{ margin:0; }
+  img{ max-width:100%; }
+  [hidden]{ display:none !important; }
+</style>
+
+<title>Kgongwane Research Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#F2F1EC;
+    --surface:#FBFAF8;
+    --surface-2:#EAE8E1;
+    --chrome:#0E1F33;
+    --chrome-2:#16293F;
+    --chrome-text:#EEF1F4;
+    --chrome-muted:#91A5BB;
+    --text:#14202C;
+    --muted:#55636F;
+    --rule:#D8D6CE;
+    --rule-strong:#B6B3A8;
+    --accent:#A0691A;
+    --accent-bright:#BE8227;
+    --accent-soft:rgba(160,105,26,.10);
+
+    --serif:"Newsreader",Georgia,"Times New Roman",serif;
+    --sans:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    --mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+
+    --measure:66ch;
+    --rail:150px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0C141C;
+      --surface:#121C26;
+      --surface-2:#18242F;
+      --chrome:#070F18;
+      --chrome-2:#101D29;
+      --chrome-text:#E7EBEF;
+      --chrome-muted:#8798A8;
+      --text:#E3E8EC;
+      --muted:#94A2AF;
+      --rule:#23313E;
+      --rule-strong:#37485A;
+      --accent:#D89E45;
+      --accent-bright:#E7B460;
+      --accent-soft:rgba(216,158,69,.12);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0C141C;
+    --surface:#121C26;
+    --surface-2:#18242F;
+    --chrome:#070F18;
+    --chrome-2:#101D29;
+    --chrome-text:#E7EBEF;
+    --chrome-muted:#8798A8;
+    --text:#E3E8EC;
+    --muted:#94A2AF;
+    --rule:#23313E;
+    --rule-strong:#37485A;
+    --accent:#D89E45;
+    --accent-bright:#E7B460;
+    --accent-soft:rgba(216,158,69,.12);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:16.5px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  h1,h2,h3,h4{margin:0;text-wrap:balance;font-weight:500;}
+  p{margin:0;}
+  ul,ol{margin:0;padding:0;list-style:none;}
+  :focus-visible{outline:2px solid var(--accent-bright);outline-offset:3px;}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    background:var(--chrome);
+    color:var(--chrome-text);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .mast-inner{
+    max-width:1140px;margin:0 auto;
+    padding-inline:20px;padding-block:26px 20px;
+    display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 28px;
+    justify-content:space-between;
+  }
+  .wordmark{
+    font-family:var(--serif);
+    font-size:clamp(1.5rem,4vw,2.1rem);
+    font-weight:500;letter-spacing:-.015em;line-height:1.1;
+  }
+  .wordmark a{text-decoration:none;}
+  .mast-kicker{
+    font-family:var(--mono);font-size:.63rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--chrome-muted);margin-top:8px;
+  }
+  .mast-meta{
+    font-family:var(--mono);font-size:.63rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--chrome-muted);
+    text-align:right;line-height:1.9;
+  }
+  .mast-meta span{display:block;}
+  @media (max-width:620px){
+    .mast-inner{padding-block:22px 16px;}
+    .mast-meta{text-align:left;line-height:1.7;}
+    .mast-meta span{display:inline;}
+    .mast-meta span + span::before{content:" · ";}
+  }
+
+  /* ---------- tab rail ---------- */
+  .railwrap{
+    position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+    background:var(--chrome-2);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .rail{
+    max-width:1140px;margin:0 auto;padding-inline:20px;
+    display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;
+  }
+  .rail::-webkit-scrollbar{display:none;}
+  .tab{
+    appearance:none;background:none;border:0;cursor:pointer;
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--chrome-muted);
+    padding:14px 15px 12px;white-space:nowrap;
+    border-bottom:2px solid transparent;
+    transition:color .15s ease,border-color .15s ease;
+  }
+  .tab:hover{color:var(--chrome-text);}
+  .tab[aria-selected="true"]{color:#fff;border-bottom-color:var(--accent-bright);}
+
+  /* ---------- page shell ---------- */
+  .page{max-width:1140px;margin:0 auto;padding-inline:20px;padding-block:0 0;}
+  .panel{padding-block:46px 72px;}
+  .panel[hidden]{display:none!important;}
+
+  .block{
+    display:grid;grid-template-columns:var(--rail) minmax(0,1fr);
+    gap:40px;padding-block:34px;
+    border-top:1px solid var(--rule);
+  }
+  .block:first-of-type{border-top:0;padding-top:0;}
+  .block-rail{
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--muted);line-height:1.9;
+    padding-top:.5em;
+  }
+  .block-rail b{display:block;color:var(--accent);font-weight:500;}
+  .block-body{min-width:0;}
+  .block-body > * + *{margin-top:16px;}
+  @media (max-width:860px){
+    .block{grid-template-columns:1fr;gap:12px;}
+    .block-rail{padding-top:0;}
+    .block-rail b{display:inline;margin-right:10px;}
+  }
+
+  .lede{max-width:var(--measure);font-size:1.06rem;color:var(--text);}
+  .body{max-width:var(--measure);color:var(--muted);}
+  .body strong{color:var(--text);font-weight:600;}
+
+  h2.sec{
+    font-family:var(--serif);font-size:clamp(1.35rem,2.6vw,1.75rem);
+    font-weight:500;letter-spacing:-.01em;line-height:1.2;
+  }
+  h3.sub{
+    font-family:var(--serif);font-size:1.18rem;font-weight:500;line-height:1.3;
+  }
+  .eyebrow{
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--accent);
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding-block:52px 40px;border-bottom:1px solid var(--rule);}
+  .hero-thesis{
+    font-family:var(--serif);
+    font-size:clamp(2rem,5.2vw,3.15rem);
+    line-height:1.08;letter-spacing:-.022em;font-weight:500;
+    max-width:19ch;margin-top:18px;
+  }
+  .hero-thesis em{font-style:italic;color:var(--accent);}
+  .hero-stand{margin-top:26px;max-width:58ch;font-size:1.08rem;color:var(--muted);}
+  .hero-stand strong{color:var(--text);font-weight:600;}
+
+  /* ---------- figures strip ---------- */
+  .figures{
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule);
+    margin-top:44px;
+  }
+  .fig{padding:20px 22px 20px 0;border-left:1px solid var(--rule);padding-left:22px;}
+  .fig:first-child{border-left:0;padding-left:0;}
+  .fig-n{
+    font-family:var(--mono);font-variant-numeric:tabular-nums;
+    font-size:clamp(1.35rem,2.6vw,1.7rem);color:var(--text);
+    font-weight:500;letter-spacing:-.02em;line-height:1.1;
+  }
+  .fig-l{font-size:.82rem;color:var(--muted);margin-top:8px;line-height:1.45;}
+  @media (max-width:760px){
+    .figures{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .fig{padding:16px 14px;border-left:1px solid var(--rule);border-top:1px solid var(--rule);}
+    .fig:nth-child(-n+2){border-top:0;}
+    .fig:nth-child(odd){border-left:0;padding-left:0;}
+  }
+
+  /* ---------- streams ---------- */
+  .streams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;}
+  .stream{padding:24px 24px 24px 0;border-left:1px solid var(--rule);padding-left:24px;}
+  .stream:first-child{border-left:0;padding-left:0;}
+  .stream h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;margin-bottom:10px;}
+  .stream p{font-size:.92rem;color:var(--muted);}
+  @media (max-width:800px){
+    .streams{grid-template-columns:1fr;}
+    .stream{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:20px;}
+    .stream:first-child{border-top:0;padding-top:0;}
+  }
+
+  /* ---------- archive list ---------- */
+  .entries{border-top:1px solid var(--rule-strong);}
+  .entry{
+    display:grid;grid-template-columns:var(--rail) minmax(0,1fr);gap:40px;
+    padding-block:26px;border-bottom:1px solid var(--rule);
+  }
+  .entry-meta{
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--muted);line-height:1.95;
+    font-variant-numeric:tabular-nums;
+  }
+  .entry-meta b{display:block;color:var(--accent);font-weight:500;}
+  .entry h3{
+    font-family:var(--serif);font-size:1.3rem;font-weight:500;
+    line-height:1.28;letter-spacing:-.01em;max-width:34ch;
+  }
+  .entry h3 a{text-decoration:none;background-image:linear-gradient(var(--rule-strong),var(--rule-strong));
+    background-size:100% 1px;background-repeat:no-repeat;background-position:0 1.12em;
+    transition:color .15s ease,background-image .15s ease;}
+  .entry h3 a:hover{color:var(--accent);background-image:linear-gradient(var(--accent),var(--accent));}
+  .entry p{margin-top:10px;color:var(--muted);font-size:.95rem;max-width:62ch;}
+  .entry-tag{
+    display:inline-block;margin-top:14px;font-family:var(--mono);
+    font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--accent);background:var(--accent-soft);
+    padding:4px 9px;border-radius:2px;
+  }
+  @media (max-width:860px){
+    .entry{grid-template-columns:1fr;gap:10px;}
+    .entry-meta b{display:inline;margin-right:10px;}
+  }
+
+  /* ---------- framework cards ---------- */
+  .frame{
+    background:var(--surface);border:1px solid var(--rule);
+    border-left:3px solid var(--accent);
+    padding:26px 26px 28px;
+  }
+  .frame + .frame{margin-top:18px;}
+  .frame-top{
+    display:flex;flex-wrap:wrap;gap:10px 16px;align-items:baseline;
+    justify-content:space-between;margin-bottom:12px;
+  }
+  .frame h3{font-family:var(--serif);font-size:1.32rem;font-weight:500;letter-spacing:-.01em;}
+  .frame .tagm{
+    font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--muted);
+  }
+  .chain{
+    display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;
+    text-transform:uppercase;margin-top:16px;color:var(--text);
+  }
+  .chain span{
+    border:1px solid var(--rule-strong);padding:5px 10px;border-radius:2px;
+    background:var(--bg);
+  }
+  .chain i{color:var(--accent);font-style:normal;font-size:.8rem;}
+  .applied{
+    margin-top:18px;padding-top:14px;border-top:1px solid var(--rule);
+    font-size:.9rem;color:var(--muted);
+  }
+  .applied b{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);display:block;margin-bottom:5px;font-weight:500;}
+
+  /* ---------- record table ---------- */
+  .tablewrap{overflow-x:auto;margin-top:8px;}
+  table.record{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem;}
+  table.record th{
+    text-align:left;font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);font-weight:500;
+    padding:0 16px 10px 0;border-bottom:1px solid var(--rule-strong);
+  }
+  table.record td{
+    padding:14px 16px 14px 0;border-bottom:1px solid var(--rule);
+    vertical-align:top;color:var(--muted);
+  }
+  table.record td:first-child{
+    font-family:var(--mono);font-size:.78rem;color:var(--text);
+    font-variant-numeric:tabular-nums;white-space:nowrap;
+  }
+  table.record td.role{color:var(--text);font-weight:500;}
+  table.record td.out b{color:var(--accent);font-weight:500;font-family:var(--mono);
+    font-variant-numeric:tabular-nums;font-size:.86rem;}
+
+  /* ---------- credential lists ---------- */
+  .creds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px;}
+  .creds > div{border-top:1px solid var(--rule);padding-block:16px;}
+  .creds dt{
+    font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:6px;
+  }
+  .creds dd{margin:0;font-size:.94rem;}
+  .creds dd em{font-style:normal;color:var(--muted);display:block;font-size:.85rem;margin-top:3px;
+    font-family:var(--mono);font-variant-numeric:tabular-nums;letter-spacing:.02em;}
+  @media (max-width:700px){.creds{grid-template-columns:1fr;}}
+
+  /* ---------- timeline ---------- */
+  .tl{border-left:1px solid var(--rule-strong);padding-left:0;margin-top:6px;}
+  .tl li{
+    display:grid;grid-template-columns:96px minmax(0,1fr);gap:22px;
+    padding:18px 0 18px 22px;position:relative;
+  }
+  .tl li + li{border-top:1px solid var(--rule);}
+  .tl li::before{
+    content:"";position:absolute;left:-4px;top:26px;
+    width:7px;height:7px;background:var(--accent);border-radius:50%;
+  }
+  .tl-y{font-family:var(--mono);font-size:.78rem;color:var(--text);
+    font-variant-numeric:tabular-nums;letter-spacing:.03em;padding-top:2px;}
+  .tl-b strong{display:block;font-family:var(--serif);font-size:1.08rem;
+    font-weight:500;color:var(--text);margin-bottom:5px;}
+  .tl-b p{color:var(--muted);font-size:.93rem;max-width:58ch;}
+  @media (max-width:640px){
+    .tl li{grid-template-columns:1fr;gap:6px;}
+  }
+
+  /* ---------- allocation ---------- */
+  .alloc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:6px;
+    border-top:1px solid var(--rule-strong);}
+  .alloc div{padding:20px 20px 20px 0;border-left:1px solid var(--rule);padding-left:20px;}
+  .alloc div:first-child{border-left:0;padding-left:0;}
+  .alloc dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);}
+  .alloc dd{margin:8px 0 0;font-family:var(--mono);font-size:1.15rem;color:var(--accent);
+    font-variant-numeric:tabular-nums;}
+  .alloc p{margin-top:6px;font-size:.86rem;color:var(--muted);}
+  @media (max-width:700px){
+    .alloc{grid-template-columns:1fr;}
+    .alloc div{border-left:0;padding-left:0;border-top:1px solid var(--rule);}
+    .alloc div:first-child{border-top:0;}
+  }
+
+  /* ---------- pull quote ---------- */
+  .pull{
+    font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.45;
+    color:var(--text);border-left:3px solid var(--accent);padding-left:22px;
+    max-width:48ch;margin-block:8px;
+  }
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px;}
+  .contact-grid > div{border-top:1px solid var(--rule);padding-block:18px;}
+  .contact-grid dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:7px;}
+  .contact-grid dd{margin:0;font-size:1rem;}
+  .contact-grid dd a{color:var(--text);text-decoration:none;
+    border-bottom:1px solid var(--rule-strong);padding-bottom:1px;}
+  .contact-grid dd a:hover{color:var(--accent);border-color:var(--accent);}
+  @media (max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+
+  .checklist li{
+    padding-left:20px;position:relative;color:var(--muted);
+    font-size:.95rem;padding-block:5px;max-width:58ch;
+  }
+  .checklist li::before{
+    content:"";position:absolute;left:0;top:14px;width:9px;height:1px;background:var(--accent);
+  }
+
+  /* ---------- footer ---------- */
+  .foot{
+    background:var(--chrome);color:var(--chrome-muted);margin-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+  }
+  .foot-inner{
+    max-width:1140px;margin:0 auto;padding-inline:20px;padding-block:30px 36px;
+    display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-start;
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;
+    line-height:2;
+  }
+  .foot-inner a{color:var(--chrome-text);text-decoration:none;}
+  .foot-inner a:hover{color:var(--accent-bright);}
+  .foot-nav{display:flex;flex-wrap:wrap;gap:6px 20px;}
+  .foot-nav button{
+    appearance:none;background:none;border:0;padding:0;cursor:pointer;color:var(--chrome-muted);
+    font:inherit;letter-spacing:inherit;text-transform:inherit;
+  }
+  .foot-nav button:hover{color:var(--accent-bright);}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="mast-inner">
+    <div>
+      <div class="wordmark">Itumeleng&nbsp;David&nbsp;Kgongwane</div>
+      <div class="mast-kicker">Industrial strategy · Capital markets · South African macro</div>
+    </div>
+    <div class="mast-meta">
+      <span>Writing since 2015</span>
+      <span>Johannesburg &amp; Pretoria</span>
+    </div>
+  </div>
+</header>
+
+<nav class="railwrap" aria-label="Sections">
+  <div class="rail" role="tablist" id="rail">
+    <button class="tab" role="tab" id="t-home" aria-controls="p-home" aria-selected="true" data-key="home">Home</button>
+    <button class="tab" role="tab" id="t-analysis" aria-controls="p-analysis" aria-selected="false" data-key="analysis">Analysis</button>
+    <button class="tab" role="tab" id="t-frameworks" aria-controls="p-frameworks" aria-selected="false" data-key="frameworks">Frameworks</button>
+    <button class="tab" role="tab" id="t-record" aria-controls="p-record" aria-selected="false" data-key="record">Track Record</button>
+    <button class="tab" role="tab" id="t-performance" aria-controls="p-performance" aria-selected="false" data-key="performance">Performance</button>
+    <button class="tab" role="tab" id="t-contact" aria-controls="p-contact" aria-selected="false" data-key="contact">Contact</button>
+  </div>
+</nav>
+
+<main class="page">
+
+  <!-- ============ HOME ============ -->
+  <section class="panel" role="tabpanel" id="p-home" aria-labelledby="t-home">
+    <div class="hero">
+      <div class="eyebrow">The thesis</div>
+      <h1 class="hero-thesis">Most macro commentary is written by people who have never <em>run a plant.</em></h1>
+      <p class="hero-stand">I spent nineteen years inside one. I am a chemical engineer who turned process problems into P&amp;L outcomes across coal, catalysts and pulp &amp; paper — and who now reads the same industrial base through a capital markets lens. <strong>This is where I publish that work.</strong></p>
+    </div>
+
+    <div class="figures">
+      <div class="fig">
+        <div class="fig-n">R203m</div>
+        <div class="fig-l">15-year NPV on a single materials programme, Sappi R&amp;D</div>
+      </div>
+      <div class="fig">
+        <div class="fig-n">0 → 16%</div>
+        <div class="fig-l">Market share taken in year one of a new packaging grade</div>
+      </div>
+      <div class="fig">
+        <div class="fig-n">3.94</div>
+        <div class="fig-l">GPA, MS Finance, Fordham Gabelli — summa cum laude</div>
+      </div>
+      <div class="fig">
+        <div class="fig-n">2022</div>
+        <div class="fig-l">Sappi global Technical Innovation Award, Graz</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Latest</b>17 Sep 2026</div>
+      <div class="block-body">
+        <h2 class="sec">The SARB's September decision is not about inflation. It is about the carry.</h2>
+        <p class="body">The Fed delivered the consensus 25bp and kept a hawkish tilt. Crude spiked on supply-side fear. The rand is feeling both. My argument ahead of the 23 September MPC: a hike has moved from hawkish scenario to macroeconomic necessity — not primarily to tame domestic prices, but to defend the yield differential that makes the ZAR the most actively traded EM currency in the world. Hesitation invites a rapid unwind of carry positions back into short-end Treasuries, and central bank credibility is hard-won and easily lost.</p>
+        <p class="body">Read the full note on LinkedIn, or start with <a href="#frameworks" data-goto="frameworks">the Triple Threat framework</a> that sits underneath it.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Streams</b>Three lines of work</div>
+      <div class="block-body">
+        <div class="streams">
+          <div class="stream">
+            <h4>Macro &amp; Monetary</h4>
+            <p>South Africa and emerging markets. The SARB reaction function, the rand's carry premium, imported inflation, and how a current account financed by hot money constrains policy.</p>
+          </div>
+          <div class="stream">
+            <h4>Capital Markets &amp; Valuation</h4>
+            <p>Discounted cash flow work on critical-metals and industrial names, value-chain mapping from raw input to margin capture, and portfolio construction under real-world constraints.</p>
+          </div>
+          <div class="stream">
+            <h4>The Industrial Base</h4>
+            <p>Deindustrialisation, refining atrophy, materials innovation and the uncomfortable question of what manufacturing is actually for when it is no longer a mass employer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Why here</b>Position</div>
+      <div class="block-body">
+        <p class="lede">The gap I write into is narrow and, I think, underserved.</p>
+        <p class="body">Sell-side research is excellent at the number and thin on the asset. Engineering commentary is precise about the asset and silent on the number. I have specified the plant, commissioned it, argued its capital case in front of a board, and then gone and learned to price the equity properly. When I write that a refinery closure changes South Africa's inflation transmission, I am describing a process I understand at the unit-operation level and a rate decision I can model.</p>
+        <p class="body">Everything published here is my own work and my own view — not my employer's.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANALYSIS ============ -->
+  <section class="panel" role="tabpanel" id="p-analysis" aria-labelledby="t-analysis" hidden>
+    <div class="block">
+      <div class="block-rail"><b>Analysis</b>The archive</div>
+      <div class="block-body">
+        <h2 class="sec">Notes on the cycle, the companies inside it, and the industrial base underneath.</h2>
+        <p class="body">Published pieces run from 2015 to the present, across three streams. They are numbered in order of publication so the through-line is visible: the argument I was making about South African manufacturing in 2015 is the same argument that shows up in the refining section of the Triple Threat note eleven years later.</p>
+      </div>
+    </div>
+
+    <div class="entries">
+      <article class="entry">
+        <div class="entry-meta"><b>No. 06</b>17 Sep 2026</div>
+        <div>
+          <h3><a href="https://www.linkedin.com/in/itumelengidk/recent-activity/all/" target="_blank" rel="noopener">The SARB's September decision is not about inflation. It is about the carry.</a></h3>
+          <p>A hawkish Fed and a crude spike have made a South African hike a macroeconomic necessity rather than a hawkish scenario. Three reasons: front-running imported inflation into the core, anchoring expectations around the 3% target, and defending the yield differential that keeps ZAR carry positions in place.</p>
+          <span class="entry-tag">Macro &amp; Monetary</span>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><b>No. 05</b>24 Aug 2026</div>
+        <div>
+          <h3><a href="https://www.linkedin.com/pulse/barbell-strategy-business-life-lessons-from-decade-kgongwane-m9ntf" target="_blank" rel="noopener">The Barbell Strategy for Business and Life</a></h3>
+          <p>A decade of training built around a single asset class, blown up by a knee, rebuilt across modalities — and what that taught me about absorptive balance sheets, compound drivers, and holding a mandate fixed while execution flexes. My most-read piece.</p>
+          <span class="entry-tag">Strategy</span>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><b>No. 04</b>6 Apr 2026</div>
+        <div>
+          <h3><a href="https://www.linkedin.com/pulse/analysis-structural-vulnerabilities-triple-threat-south-kgongwane-kv15f" target="_blank" rel="noopener">Structural Vulnerabilities and the "Triple Threat" in the South African Economy</a></h3>
+          <p>Since the 2007–08 super-cycle, oil shocks have run the same circuit through South Africa: currency depreciation, cost-push inflation, monetary contraction. The mechanics of fragility are a current account financed by hot money, the loss of refining capacity, and an economy financialised faster than it industrialised.</p>
+          <span class="entry-tag">Macro &amp; Monetary</span>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><b>No. 03</b>11 Jul 2016</div>
+        <div>
+          <h3><a href="https://www.linkedin.com/pulse/why-existing-manufacturing-firms-sa-cannot-continue-kgongwane-idk-" target="_blank" rel="noopener">Why existing manufacturing firms in SA cannot continue being mass employers</a></h3>
+          <p>Tracing the post-war origins of South Africa's manufacturing capacity to explain why the incumbent industrial base cannot absorb employment at the scale policy keeps asking of it — and what that implies for where new capacity has to come from.</p>
+          <span class="entry-tag">The Industrial Base</span>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><b>No. 02</b>31 Aug 2015</div>
+        <div>
+          <h3><a href="https://www.linkedin.com/pulse/south-african-macro-view-itumeleng-david-kgongwane-idk-" target="_blank" rel="noopener">South African Macro View</a></h3>
+          <p>Q2 GDP contracted an annualised 1.3%, driven by sharp declines in mining, manufacturing and agriculture. Written as the commodity cycle turned — an early read on how concentrated South Africa's output risk really was.</p>
+          <span class="entry-tag">Macro &amp; Monetary</span>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><b>No. 01</b>15 Jul 2015</div>
+        <div>
+          <h3><a href="https://www.linkedin.com/pulse/picture-worth-sharing-south-african-economy-kgongwane-idk-" target="_blank" rel="noopener">A picture worth sharing about the South African economy</a></h3>
+          <p>The first note. Mining and manufacturing were historically the country's largest employers; the chart that started this whole line of enquiry showed how far that had already shifted.</p>
+          <span class="entry-tag">The Industrial Base</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="block" style="border-top:0;padding-top:34px;">
+      <div class="block-rail"><b>Pipeline</b>In preparation</div>
+      <div class="block-body">
+        <ul class="checklist">
+          <li><strong>Elk Creek:</strong> a full DCF on NioCorp's niobium–scandium–titanium project, built to the house method — five-year revenue build, terminal value by both exit multiple and perpetuity growth, and an explicit list of the assumptions that break the model.</li>
+          <li><strong>The rare-earth value chain:</strong> mapping where margin is actually captured between mine, separation, metal and magnet — and why the listed exposure rarely sits where the value does.</li>
+          <li><strong>AI infrastructure and the neocloud tier:</strong> CoreWeave, Nebius and the private field, read as an industrial capacity build rather than a software story.</li>
+          <li><strong>Deindustrialisation and the refining gap, a decade on:</strong> revisiting the 2016 argument against what SAPREF and ENGEN actually did to the inflation transmission channel.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FRAMEWORKS ============ -->
+  <section class="panel" role="tabpanel" id="p-frameworks" aria-labelledby="t-frameworks" hidden>
+    <div class="block">
+      <div class="block-rail"><b>Frameworks</b>Reusable models</div>
+      <div class="block-body">
+        <h2 class="sec">Four models I keep returning to.</h2>
+        <p class="body">Individual notes go stale. The structures underneath them do not. These are the four analytical frames I actually use — on a rate decision, a valuation, a commercialisation case, or a week that got away from me. Each one is stated plainly enough that you can argue with it.</p>
+      </div>
+    </div>
+
+    <div class="block" style="border-top:0;padding-top:0;">
+      <div class="block-rail"><b>The set</b>Four frames</div>
+      <div class="block-body">
+
+        <div class="frame">
+          <div class="frame-top">
+            <h3>The Triple Threat</h3>
+            <div class="tagm">Macro</div>
+          </div>
+          <p class="body">South Africa's recurring response to an exogenous oil shock is not three separate events. It is one transmission chain, and it has run the same way since Brent touched roughly $147 in the 2007–08 super-cycle. The reason it keeps recurring is structural: a persistent current account deficit financed by volatile capital, a domestic refining base that has largely gone (SAPREF, ENGEN), and an economy where market volatility now outpaces industrial output.</p>
+          <div class="chain">
+            <span>Oil shock</span><i>→</i><span>Rand depreciation</span><i>→</i><span>Cost-push inflation</span><i>→</i><span>SARB contraction</span>
+          </div>
+          <div class="applied"><b>Where it applies</b>Any read on the SARB reaction function; any RSA asset exposed to a Strait of Hormuz headline; any argument that high rates are a growth choice rather than a currency defence.</div>
+        </div>
+
+        <div class="frame">
+          <div class="frame-top">
+            <h3>The Absorptive Balance Sheet</h3>
+            <div class="tagm">Strategy</div>
+          </div>
+          <p class="body">Single-threaded strategies create fragile enterprises. The test of an operating model is not its return in the good state — it is whether a shock to one channel takes the whole system down. Build redundancy across modalities before you need it, then spend your effort on compound drivers: the few multi-joint moves that produce systemic adaptation per unit of time invested, rather than the busywork that looks like progress.</p>
+          <div class="chain">
+            <span>Diversify channels</span><i>→</i><span>Absorb the shock</span><i>→</i><span>Compound through it</span>
+          </div>
+          <div class="applied"><b>Where it applies</b>Revenue concentration; single-mill or single-customer exposure; personal capital allocation across a career pivot. Set out in full in <a href="#analysis" data-goto="analysis">Note 05</a>.</div>
+        </div>
+
+        <div class="frame">
+          <div class="frame-top">
+            <h3>The Engineer's DCF</h3>
+            <div class="tagm">Valuation</div>
+          </div>
+          <p class="body">A discounted cash flow is a mass balance with a discount rate attached. The house method is deliberately rigid: a five-year revenue build with stated volume and price drivers, an operating margin path, year-by-year free cash flow, an explicit WACC, terminal value calculated <em>both</em> by exit multiple and by perpetuity growth, a discount-rate sensitivity table, the DCF against the market price — and then the part most models omit, a named list of the assumptions that would break it. If you cannot state what kills the model, you have not built one.</p>
+          <div class="chain">
+            <span>Revenue build</span><i>→</i><span>FCF</span><i>→</i><span>WACC</span><i>→</i><span>TV (both ways)</span><i>→</i><span>Sensitivity</span><i>→</i><span>Breakers</span>
+          </div>
+          <div class="applied"><b>Where it applies</b>Critical-metals and mining equities, industrial names, and any capital case where the operating assumptions matter more than the multiple. Applied most recently to NioCorp's Elk Creek project.</div>
+        </div>
+
+        <div class="frame">
+          <div class="frame-top">
+            <h3>Stage-Gate Commercialisation</h3>
+            <div class="tagm">Execution</div>
+          </div>
+          <p class="body">Most industrial innovation dies in the gap between a good lab result and a P&amp;L line. Stage-gate closes that gap by forcing the same question at every gate — what is the quantified financial case, by project category, and what evidence moves it — and by making a kill a legitimate outcome. The discipline is not the software. It is insisting that a cross-functional team can defend a credible, data-driven business case before capital moves.</p>
+          <div class="chain">
+            <span>Lab result</span><i>→</i><span>Gated case</span><i>→</i><span>Mill trial</span><i>→</i><span>Scale-up</span><i>→</i><span>EBITDA</span>
+          </div>
+          <div class="applied"><b>Where it applies</b>Materials and process innovation portfolios. Used to support the rollout of stage-gate governance across Sappi's local R&amp;D teams — recognised with the General Manager's Award in November 2024.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRACK RECORD ============ -->
+  <section class="panel" role="tabpanel" id="p-record" aria-labelledby="t-record" hidden>
+    <div class="block">
+      <div class="block-rail"><b>Record</b>The evidence</div>
+      <div class="block-body">
+        <h2 class="sec">Nineteen years, three industries, one method.</h2>
+        <p class="body">Coal processing, automotive catalysts, pulp and paper. Different chemistry, identical discipline: find the unit economic that actually moves, prove it at scale, and defend the number in front of people who control capital. The figures below are outcomes that landed in a P&amp;L, not project aspirations.</p>
+        <p class="pull">I can price the plant because I have specified the plant.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Career</b>2006 → present</div>
+      <div class="block-body">
+        <div class="tablewrap">
+          <table class="record">
+            <thead>
+              <tr><th scope="col">Period</th><th scope="col">Role &amp; organisation</th><th scope="col">Outcome</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2023 –</td>
+                <td class="role">Lead Engineer<br><span style="color:var(--muted);font-weight:400;">Sappi R&amp;D, Pretoria</span></td>
+                <td class="out">Scaled microfibrillated cellulose from a European R&amp;D collaboration into the Stanger mill, establishing the optimum energy input for performance. Offsetting raw material with MFC saved roughly <b>R1 000/t</b> at constant quality — <b>R24m</b> annual EBITDA, <b>R203m</b> 15-year NPV.</td>
+              </tr>
+              <tr>
+                <td>2017 – 2022</td>
+                <td class="role">Senior Engineer<br><span style="color:var(--muted);font-weight:400;">Sappi R&amp;D, Pretoria</span></td>
+                <td class="out">Led development of sustainable packaging grades to offset the structural decline in graphic paper. Launched September 2020; share moved from zero to <b>16%</b> inside a year and now sits at <b>25–30%</b>. Contributed <b>R36m</b> and <b>R51m</b> EBITDA in years one and two.</td>
+              </tr>
+              <tr>
+                <td>2013 – 2017</td>
+                <td class="role">Process Engineer<br><span style="color:var(--muted);font-weight:400;">Sappi Enstra, Springs</span></td>
+                <td class="out">Acted across production and technical management. Cut water draw from <b>15</b> to <b>9 ML/day</b> and delivered <b>R20m</b> in savings through filler chemistry that displaced imported pulp fibre — removing both cost and FX exposure.</td>
+              </tr>
+              <tr>
+                <td>2011 – 2013</td>
+                <td class="role">Process Project Engineer<br><span style="color:var(--muted);font-weight:400;">BASF Catalysts, Port Elizabeth</span></td>
+                <td class="out">Mapped process, data and physical inventory across SAP and Oracle with teams in Germany and locally, then specified the logic that fixed it. Recycled PGM inventory down <b>45%</b>. Nominated for the Global Catalyst Compass Award.</td>
+              </tr>
+              <tr>
+                <td>2009 – 2010</td>
+                <td class="role">Junior Process Engineer<br><span style="color:var(--muted);font-weight:400;">BASF Catalysts, Port Elizabeth</span></td>
+                <td class="out">Reconfigured asymmetric soot-filter production into a two-tank process, eliminating back-pressure defects that were running at <b>25%</b>. Throughput rose <b>27%</b> and set a new production record.</td>
+              </tr>
+              <tr>
+                <td>2006 – 2007</td>
+                <td class="role">Metallurgist<br><span style="color:var(--muted);font-weight:400;">Anglo Coal, Bank Colliery</span></td>
+                <td class="out">Thermal coal processing across the plant's unit operations. Where the habit of reducing every question to a cost per tonne was formed.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Awards</b>Recognition</div>
+      <div class="block-body">
+        <dl class="creds">
+          <div>
+            <dt>Global Technical Innovation Award</dt>
+            <dd>Sappi<em>Graz, Austria · 9 May 2022</em></dd>
+          </div>
+          <div>
+            <dt>General Manager's Award</dt>
+            <dd>Sappi<em>November 2024</em></dd>
+          </div>
+          <div>
+            <dt>Annual Value Award</dt>
+            <dd>Sappi — project execution under COVID<em>November 2021</em></dd>
+          </div>
+          <div>
+            <dt>Global Catalyst Compass Award</dt>
+            <dd>BASF — nominated<em>Inventory optimisation</em></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Education</b>Qualifications</div>
+      <div class="block-body">
+        <dl class="creds">
+          <div>
+            <dt>MS Finance</dt>
+            <dd>Fordham University, Gabelli School of Business, New York<em>Aug 2026 · GPA 3.94 · summa cum laude</em></dd>
+          </div>
+          <div>
+            <dt>MBA</dt>
+            <dd>Gordon Institute of Business Science<em>Dec 2025 · distinctions in decision making, entrepreneurial finance, financial modelling</em></dd>
+          </div>
+          <div>
+            <dt>Postgraduate Diploma</dt>
+            <dd>Gordon Institute of Business Science<em>Nov 2024 · distinctions in accounting, corporate finance, macroeconomics</em></dd>
+          </div>
+          <div>
+            <dt>BSc Chemical Engineering</dt>
+            <dd>University of the Witwatersrand<em>Nov 2005</em></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Also</b>Standing &amp; skills</div>
+      <div class="block-body">
+        <ul class="checklist">
+          <li><strong>Institute of Directors South Africa</strong> — member.</li>
+          <li><strong>Certifications:</strong> The AI-Driven Leader (African Academy of AI, 2025); Microsoft 365 Copilot Masterclass (2025); Lean Six Sigma Fundamentals; Project Management (Wits Plus); Intermediate Leadership Programme (NMMU).</li>
+          <li><strong>Working methods:</strong> financial modelling and valuation, stage-gate portfolio governance, C-suite and government stakeholder engagement, cross-functional and cross-border team leadership.</li>
+          <li><strong>Languages:</strong> English, Setswana, isiZulu.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PERFORMANCE ============ -->
+  <section class="panel" role="tabpanel" id="p-performance" aria-labelledby="t-performance" hidden>
+    <div class="block">
+      <div class="block-rail"><b>Performance</b>The barbell</div>
+      <div class="block-body">
+        <h2 class="sec">A decade ago my fitness was a single-asset portfolio. Then it blew up.</h2>
+        <p class="body">This page is not a wellness section. It is the clearest worked example I have of the framework I apply everywhere else, and the only one where I have a full decade of my own data. The physical setbacks were real, the recoveries were engineered, and the principles transferred straight back into how I think about operating risk.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Record</b>2015 → present</div>
+      <div class="block-body">
+        <ul class="tl">
+          <li>
+            <div class="tl-y">2015 – 2017</div>
+            <div class="tl-b"><strong>Scaling a single asset class</strong>
+            <p>5 km to 10 km to half marathon to the full 42.2 km, scaled systematically. High dopaminergic drive, peak cardiovascular capacity, a strong network. The return felt undeniable — which is exactly the condition under which concentration risk goes unnoticed.</p></div>
+          </li>
+          <li>
+            <div class="tl-y">Mid-2018</div>
+            <div class="tl-b"><strong>The first black swan: knee surgery</strong>
+            <p>Immediate balance sheet distress. A month immobile, severe muscle atrophy, lost range of motion, zero baseline endurance. Clinical prognosis: no running for the foreseeable future.</p></div>
+          </li>
+          <li>
+            <div class="tl-y">2018 – 2019</div>
+            <div class="tl-b"><strong>Diversifying the training matrix</strong>
+            <p>A mountain bike and pool-based hydrotherapy — hydrostatic pressure and water resistance to restore motor control without joint shear. That low-impact base then carried a progression into compound structural loading: back squats, Bulgarian split squats, Romanian deadlifts.</p></div>
+          </li>
+          <li>
+            <div class="tl-y">2020</div>
+            <div class="tl-b"><strong>The second black swan: gym closures</strong>
+            <p>By then the strength investment had fortified connective tissue beyond pre-injury levels, so the pivot back to solo road running was seamless — pace optimisation, and early-morning miles used as high-leverage thinking space.</p></div>
+          </li>
+          <li>
+            <div class="tl-y">2024 – 2026</div>
+            <div class="tl-b"><strong>Dynamic allocation under constraint</strong>
+            <p>Postgraduate study in two countries, professional mandates, family, volatile markets. Time became the binding constraint. The answer was not to abandon the mandate but to reallocate around it.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Allocation</b>Current week</div>
+      <div class="block-body">
+        <dl class="alloc">
+          <div>
+            <dt>Compound lifting</dt>
+            <dd>3–4 × 45 min</dd>
+            <p>Multi-joint blocks for structural integrity and metabolic rate. Highest systemic adaptation per minute invested.</p>
+          </div>
+          <div>
+            <dt>Aerobic base</dt>
+            <dd>2 × 6–10 km</dd>
+            <p>Cardiovascular efficiency and mental decompression. The runs are also where most of the thinking gets done.</p>
+          </div>
+          <div>
+            <dt>Input quality</dt>
+            <dd>Non-negotiable</dd>
+            <p>Energy balance, macronutrient partitioning, nutrient density. No training volume out-earns a structural deficit.</p>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Transfer</b>The takeaway</div>
+      <div class="block-body">
+        <p class="body">You cannot control the macro environment. You can control the internal balance sheet: hold reserves that absorb asymmetric shocks, stay flexible about execution channels — if you cannot run, you cycle; if you cannot lift, you swim — and concentrate effort on the few things that compound.</p>
+        <p class="pull">When the underlying architecture is resilient, agile and diversified, you don't merely survive the storm. You compound through it.</p>
+        <p class="body">The full argument is <a href="#analysis" data-goto="analysis">Note 05</a>; the framework is set out on <a href="#frameworks" data-goto="frameworks">the Frameworks page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="panel" role="tabpanel" id="p-contact" aria-labelledby="t-contact" hidden>
+    <div class="block">
+      <div class="block-rail"><b>Contact</b>Get in touch</div>
+      <div class="block-body">
+        <h2 class="sec">I read everything. I answer most things.</h2>
+        <p class="body">The fastest way to reach me is email. If you are writing about something published here, say which note — it saves us both a round trip.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Direct</b>Channels</div>
+      <div class="block-body">
+        <dl class="contact-grid">
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:kgongwane@icloud.com">kgongwane@icloud.com</a></dd>
+          </div>
+          <div>
+            <dt>LinkedIn</dt>
+            <dd><a href="https://www.linkedin.com/in/itumelengidk/" target="_blank" rel="noopener">linkedin.com/in/itumelengidk</a></dd>
+          </div>
+          <div>
+            <dt>Based</dt>
+            <dd>Johannesburg &amp; Pretoria, South Africa</dd>
+          </div>
+          <div>
+            <dt>Cadence</dt>
+            <dd>Long-form notes as the cycle warrants; shorter commentary on LinkedIn.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Welcome</b>Worth writing about</div>
+      <div class="block-body">
+        <ul class="checklist">
+          <li><strong>Disagreement.</strong> If a framework here is wrong, the argument is more useful to me than the agreement.</li>
+          <li><strong>Commissioned analysis</strong> — valuation work, sector or value-chain mapping, or an industrial commercialisation case that needs a financial spine.</li>
+          <li><strong>Panels, lectures and media comment</strong> on South African macro, critical metals, or materials innovation.</li>
+          <li><strong>Board and advisory conversations</strong> where an engineering read on an industrial asset is the missing input.</li>
+          <li><strong>Mentoring</strong> — particularly engineers making the same move into finance. I have walked that route recently enough to remember where it is steep.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-rail"><b>Note</b>Standing disclosure</div>
+      <div class="block-body">
+        <p class="body">Everything published on this site is written in my personal capacity and represents my own views, not those of any employer or institution. Nothing here is investment advice or a recommendation to buy or sell any security. Valuation work is published to show method, not to direct anyone's capital.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <div>Itumeleng David Kgongwane</div>
+      <div>Independent research &amp; commentary · Writing since 2015</div>
+    </div>
+    <div class="foot-nav">
+      <button type="button" data-goto="home">Home</button>
+      <button type="button" data-goto="analysis">Analysis</button>
+      <button type="button" data-goto="frameworks">Frameworks</button>
+      <button type="button" data-goto="record">Track Record</button>
+      <button type="button" data-goto="performance">Performance</button>
+      <button type="button" data-goto="contact">Contact</button>
+    </div>
+    <div>
+      <div><a href="mailto:kgongwane@icloud.com">kgongwane@icloud.com</a></div>
+      <div><a href="https://www.linkedin.com/in/itumelengidk/" target="_blank" rel="noopener">LinkedIn</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var keys = tabs.map(function(t){ return t.dataset.key; });
+
+  function show(key, push){
+    if (keys.indexOf(key) === -1) key = 'home';
+    tabs.forEach(function(t){
+      var on = t.dataset.key === key;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      document.getElementById('p-' + t.dataset.key).hidden = !on;
+    });
+    if (push && location.hash !== '#' + key){
+      history.replaceState(null, '', '#' + key);
+    }
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ show(t.dataset.key, true); });
+    t.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = tabs[(i + d + tabs.length) % tabs.length];
+      n.focus(); show(n.dataset.key, true);
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-goto]');
+    if (!el) return;
+    e.preventDefault();
+    show(el.dataset.goto, true);
+  });
+
+  window.addEventListener('hashchange', function(){
+    show((location.hash || '#home').slice(1), false);
+  });
+
+  show((location.hash || '#home').slice(1), false);
+})();
+</script>
+
+</body>
+</html>
