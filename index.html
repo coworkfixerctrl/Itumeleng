@@ -204,6 +204,10 @@
 
   /* ---------- hero ---------- */
   .hero{padding-block:52px 40px;border-bottom:1px solid var(--rule);}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,34%);gap:56px;align-items:center;}
+  .hero-copy{min-width:0;}
+  .hero-portrait{margin:0;justify-self:end;width:min(100%,330px);aspect-ratio:3 / 4;overflow:hidden;background:var(--surface-2);}
+  .hero-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top;mix-blend-mode:multiply;filter:saturate(.88) contrast(.96);}
   .hero-thesis{
     font-family:var(--serif);
     font-size:clamp(2rem,5.2vw,3.15rem);
@@ -213,6 +217,10 @@
   .hero-thesis em{font-style:italic;color:var(--accent);}
   .hero-stand{margin-top:26px;max-width:58ch;font-size:1.08rem;color:var(--muted);}
   .hero-stand strong{color:var(--text);font-weight:600;}
+  @media (max-width:760px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    .hero-portrait{justify-self:start;width:min(100%,280px);}
+  }
 
   /* ---------- figures strip ---------- */
   .figures{
@@ -458,9 +466,16 @@
   <!-- ============ HOME ============ -->
   <section class="panel" role="tabpanel" id="p-home" aria-labelledby="t-home">
     <div class="hero">
-      <div class="eyebrow">The thesis</div>
-      <h1 class="hero-thesis">Most macro commentary is written by people who have never <em>run a plant.</em></h1>
-      <p class="hero-stand">I spent nineteen years inside one. I am a chemical engineer who turned process problems into P&amp;L outcomes across coal, catalysts and pulp &amp; paper — and who now reads the same industrial base through a capital markets lens. <strong>This is where I publish that work.</strong></p>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">The thesis</div>
+          <h1 class="hero-thesis">Most macro commentary is written by people who have never <em>run a plant.</em></h1>
+          <p class="hero-stand">I spent nineteen years inside one. I am a chemical engineer who turned process problems into P&amp;L outcomes across coal, catalysts and pulp &amp; paper — and who now reads the same industrial base through a capital markets lens. <strong>This is where I publish that work.</strong></p>
+        </div>
+        <figure class="hero-portrait" hidden>
+          <img src="portrait.jpg" alt="Itumeleng David Kgongwane" onerror="this.closest('.hero-portrait').hidden=true">
+        </figure>
+      </div>
     </div>
 
     <div class="figures">
