@@ -20,5 +20,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./  # Change this if your website files are in a subfolder
-          remote-dir: /suseco.co.za/wwwroot
-          git-ftp-args: --insecure  # Optional: use if you encounter SSL issues
+          server-dir: /suseco.co.za/wwwroot
+
