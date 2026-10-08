@@ -3,7 +3,7 @@ name: FTP Deploy
 on:
   push:
     branches:
-      - main  # or your deployment branch
+      - main  # Change this if you deploy from a different branch
 
 jobs:
   ftp-deploy:
@@ -19,4 +19,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./  # adjust if your site files are in a subfolder
+          protocol: ftp
+          port: 21
+          local-dir: ./          # or ./dist if you have a build folder
+          server-dir: /suseco.co.za/wwwroot
