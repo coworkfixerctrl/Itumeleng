@@ -1,0 +1,41 @@
+{
+  "summary": "Comprehensive first-run test of Kgongwane portfolio (backend + frontend). 19/20 pytest tests passed. Frontend home, timeline, case studies, booking form, market analysis listing/detail, LinkedIn share, contact page, admin login/dashboard, article CRUD, bookings tab, and mobile responsive nav all verified working. Only one real backend issue found: brute-force lockout is bypassable because the identifier keys on request.client.host which resolves to multiple ingress-pod IPs behind the LB (verified in Mongo login_attempts), so the per-IP+email count never reaches the 5-fail threshold.",
+  "backend_issues": {
+    "critical": [
+      {"endpoint": "POST /api/auth/login", "issue": "Brute-force lockout never triggers in this deployment. The identifier uses request.client.host which is the ingress pod IP; the LB rotates between ~2 pods (observed 10.208.147.136 and .137), so failed attempts split across identifiers and count stays below 5. Attacker gets unlimited tries from a single real client IP. Fix: use X-Forwarded-For (trusted) or lock by email only.", "priority": "HIGH"}
+    ],
+    "minor": [
+      {"endpoint": "CORS middleware", "issue": "CORS_ORIGINS=\"*\" combined with allow_credentials=True is a browser spec violation (ACAO=* is rejected for credentialed XHR). Not currently user-facing because frontend is same-origin, but will break any external origin that tries to call the API with credentials. Set explicit origin list."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/backend_test.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "Harden brute-force lockout: either (a) trust X-Forwarded-For to get real client IP, or (b) key the attempts by email only (plus optional IP). Current implementation is a false sense of security.",
+    "Replace CORS_ORIGINS=\"*\" with the explicit frontend origin(s) since allow_credentials=True is set."
+  ],
+  "critical_code_review_comments": [
+    "server.py login(): identifier = f\"{request.client.host}:{email}\" — in a multi-replica k8s ingress setup, host is the ingress pod IP, not client IP; attempts fragment across identifiers so lockout never triggers.",
+    "CORS: wildcard + allow_credentials=True violates the fetch spec; browsers will block credentialed cross-origin requests.",
+    "server.py is ~460 lines, still within comfortable range; good separation of models/routes.",
+    "GET /api/bookings is public and lists all bookings (masked). Fine per product spec but consider pagination for growth.",
+    "Startup seeder correctly upserts admin password when env changes (good)."
+  ],
+  "updated_files": [
+    "/app/backend/tests/backend_test.py"
+  ],
+  "success_rate": {"backend": "95% (19/20)", "frontend": "100% of covered flows"},
+  "test_credentials": "Admin kgongwane@icloud.com / Kgongwane@2026 (from /app/memory/test_credentials.md) — login succeeds, httpOnly access_token cookie set with Secure+SameSite=None, Bearer token also works on /auth/me.",
+  "seed_data_creation": "Created and cleaned up: 1 TEST_ article via admin UI (deleted), 1 TEST_ UI booking via home form (deleted via admin API), 1 TEST_ booking via API (deleted). No seeded sample articles were touched.",
+  "retest_needed": true,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Backend tests live in /app/backend/tests/backend_test.py and are pytest-based with pytest-xdist (2 workers) via /app/backend/pytest.ini. Admin uses /api/auth/login returning JWT + Bearer-usable token. Brute-force lockout cannot be verified end-to-end from an external client until identifier is fixed; the test currently asserts 429 and fails for this reason. The 3 sample articles are seeded only when articles collection is empty; do not wipe. Timeline/case-cards use id-based testids (e.g. case-card-sustainable-packaging), not numeric indexes.",
+  "rca of the issue": "RCA: db.login_attempts shows the identifier for the throwaway test email was split across two documents (10.208.147.136:... count=2 and 10.208.147.137:... count=4), confirming the k8s ingress fronting the backend uses multiple pods and request.client.host returns the ingress-side peer rather than the real client IP. Mitigation: parse X-Forwarded-For (take first entry) when available, or simply key the lockout counter by lowercased email. Also consider resetting lockouts for the admin email in Mongo after any accidental fails (one 10.208.147.137:kgongwane@icloud.com entry with count=1 is currently present but well below threshold)."
+}

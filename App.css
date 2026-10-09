@@ -1,0 +1,10 @@
+.container-x {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+@media (min-width: 768px) {
+    .container-x { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
