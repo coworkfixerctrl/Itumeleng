@@ -1,0 +1,253 @@
+{
+  "project_name": "Itumeleng D. Kgongwane - Executive Portfolio & Advisory Platform",
+  "theme": "Industrial Prestige",
+  "target_persona": "Executive bridging Chemical Engineering, R&D, Corporate Finance, M&A Strategy, and Equity Analysis",
+  "persona_name": "Itumeleng D. Kgongwane",
+  "monogram_brand": "IDK / ITUMELENG D. KGONGWANE",
+  "app_type": "portfolio",
+  "colors": {
+    "background": {
+      "hex": "#0F172A",
+      "tailwind": "bg-slate-900 / bg-slate-950",
+      "rgb": "15, 23, 42",
+      "usage": "Primary deep dark background for canvas and layout"
+    },
+    "surface": {
+      "hex": "#1E293B",
+      "tailwind": "bg-slate-800/80",
+      "rgb": "30, 41, 59",
+      "usage": "Card, bento grid, and container surfaces with 1px border"
+    },
+    "surface_hover": {
+      "hex": "#334155",
+      "tailwind": "hover:bg-slate-700/60",
+      "usage": "Interactive states for cards and list rows"
+    },
+    "accent_ice_blue": {
+      "hex": "#38BDF8",
+      "tailwind": "text-sky-400, bg-sky-400, border-sky-400/30",
+      "rgb": "56, 189, 248",
+      "usage": "Primary accent for key metrics, active tab indicators, timeline sparks, and hero highlights"
+    },
+    "accent_electric": {
+      "hex": "#0EA5E9",
+      "tailwind": "sky-500",
+      "usage": "Hover and CTA primary button fill"
+    },
+    "text_primary": {
+      "hex": "#F8FAFC",
+      "tailwind": "text-slate-50",
+      "usage": "Headlines, high-emphasis text, key data values"
+    },
+    "text_secondary": {
+      "hex": "#94A3B8",
+      "tailwind": "text-slate-400",
+      "usage": "Subtitles, body descriptions, metadata, dates"
+    },
+    "text_muted": {
+      "hex": "#64748B",
+      "tailwind": "text-slate-500",
+      "usage": "Labels, overlines, footers, subtle captions"
+    },
+    "border_subtle": {
+      "hex": "rgba(255, 255, 255, 0.1)",
+      "tailwind": "border-slate-800 or border-white/10",
+      "usage": "Crisp 1px tactical grid lines and container dividers"
+    },
+    "border_active": {
+      "hex": "rgba(56, 189, 248, 0.4)",
+      "tailwind": "border-sky-400/40",
+      "usage": "Focused inputs, active timeline nodes, selected tabs"
+    }
+  },
+  "typography": {
+    "heading_font": "Outfit, Clash Display, or System Sans Condensed (font-sans font-bold tracking-tight)",
+    "body_font": "Inter, DM Sans, or System Sans (font-normal leading-relaxed)",
+    "mono_font": "JetBrains Mono, Fira Code (font-mono text-xs uppercase tracking-widest for data badges and metrics)",
+    "sizes": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-50",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-100",
+      "h3": "text-xl sm:text-2xl font-semibold text-slate-100",
+      "h4": "text-lg font-medium text-slate-200",
+      "body": "text-base text-slate-300 leading-relaxed",
+      "caption": "text-xs font-mono uppercase tracking-widest text-sky-400"
+    }
+  },
+  "visual_enhancers": {
+    "grid_pattern": "Subtle 1px tactical grid with background-image: radial-gradient(rgba(56,189,248,0.08) 1px, transparent 1px) [size: 24px 24px]",
+    "glassmorphism": "backdrop-blur-xl bg-slate-900/80 border border-white/10 shadow-2xl",
+    "glowing_beam": "1px gradient border with sky-400/50 glow on hover",
+    "noise_overlay": "Subtle grainy texture overlay (3% opacity) to eliminate digital flatness",
+    "steven_bartlett_social_icons": "Rounded square or pill icon buttons with overflow-hidden vertical slide / color fill swap on hover (Slate-800 to Ice Blue gradient bg + dark text)"
+  },
+  "layout_and_sections": {
+    "navigation": {
+      "type": "Fixed glassmorphism top header with z-50",
+      "logo": "Monogram 'IDK' with molecular/financial dual-axis vector mark",
+      "links": [
+        {"name": "Overview", "href": "#hero"},
+        {"name": "Trajectory", "href": "#timeline"},
+        {"name": "Case Studies", "href": "#casestudies"},
+        {"name": "Market Analysis", "path": "/market-analysis"},
+        {"name": "Advisory & Contact", "path": "/contact"}
+      ],
+      "cta": "Book Consultation"
+    },
+    "section_1_hero": {
+      "title": "HERO SECTION",
+      "layout": "Split Screen (60/40 desktop)",
+      "left_column": {
+        "eyebrow": "EXECUTIVE PORTFOLIO • CHEMICAL ENGINEERING & CORPORATE FINANCE",
+        "branding_statement": "Bridging Molecular Execution and Corporate Strategy",
+        "description": "Cross-functional executive translating technical chemical engineering precision into high-stakes capital allocation, valuation, M&A strategy, and corporate growth.",
+        "ctas": [
+          {"label": "Explore Track Record", "href": "#casestudies", "variant": "primary"},
+          {"label": "Schedule Advisory Call", "href": "#contact", "variant": "secondary"}
+        ],
+        "signature_animation": "Masked line-by-line reveal on initial page load"
+      },
+      "right_column": {
+        "bento_grid": "3-Part Bento Box Grid",
+        "cards": [
+          {
+            "id": "bento-1",
+            "title": "Dual Core Competency",
+            "stat": "Eng R&D + Finance",
+            "sub": "Process Intensification & Financial Valuation"
+          },
+          {
+            "id": "bento-2",
+            "title": "Capital & Project Impact",
+            "stat": "$120M+",
+            "sub": "Cross-functional Capex Optimization & Valuation"
+          },
+          {
+            "id": "bento-3",
+            "title": "Molecular Structure Moment",
+            "type": "Interactive 3D / Canvas Hexagonal Lattice",
+            "sub": "Cellulose / Chemical Bond Matrix interactive particle node"
+          }
+        ]
+      }
+    },
+    "section_editorial_marquee": {
+      "type": "Slow Editorial Ribbon Marquee",
+      "items": [
+        "CHEMICAL ENGINEERING",
+        "CORPORATE FINANCE",
+        "EQUITY VALUATION",
+        "M&A ADVISORY",
+        "R&D COMMERCIALIZATION",
+        "CAPITAL ALLOCATION",
+        "PROCESS OPTIMIZATION"
+      ],
+      "style": "Font-mono text-sm tracking-widest text-slate-400 bg-slate-900/90 py-4 border-y border-white/5"
+    },
+    "section_2_trajectory": {
+      "title": "TRAJECTORY TIMELINE",
+      "description": "Interactive dual-track timeline mapping career progression and key milestones",
+      "filters": ["All Milestones", "Engineering & R&D", "Finance & Corporate Strategy"],
+      "items": [
+        {
+          "period": "2023 - Present",
+          "role": "Senior Corporate Strategy & Financial Analyst",
+          "category": "Finance & Corporate Strategy",
+          "org": "Industrial & Energy Advisory Group",
+          "details": "Spearheaded equity valuation models and strategic feasibility for $85M chemical processing facility expansion.",
+          "tech_tags": ["DCF Modeling", "M&A Feasibility", "Capex Allocation", "ESG Metrics"]
+        },
+        {
+          "period": "2021 - 2023",
+          "role": "Lead Chemical Engineer & R&D Project Manager",
+          "category": "Engineering & R&D",
+          "org": "Advanced Materials Solutions",
+          "details": "Led 8-person engineering team optimizing catalytic reactions, reducing yield loss by 18% while cutting unit operating cost by $2.4M annually.",
+          "tech_tags": ["Reaction Kinetics", "Pilot Plant Scale-Up", "HAZOP", "Process Simulation"]
+        },
+        {
+          "period": "2019 - 2021",
+          "role": "Process Engineer & Valuation Specialist",
+          "category": "Engineering & R&D",
+          "org": "Petrochemical & Polymer Tech",
+          "details": "Engineered mass-energy balances and economic sensitivity models for biomass energy transformation initiatives.",
+          "tech_tags": ["Aspen Plus", "Financial Modeling", "Plant Optimization"]
+        }
+      ]
+    },
+    "section_3_case_studies": {
+      "title": "CASE STUDIES GRID",
+      "layout": "3-Column Clean Grid with Technical Problem vs. Financial Outcome split",
+      "cases": [
+        {
+          "id": "cs-1",
+          "title": "Catalytic Reactor Scale-Up & NPV Optimization",
+          "sector": "Petrochemicals / Specialty Chemicals",
+          "technical_problem": "High enthalpy fluctuation causing 14% batch wastage during pilot-to-commercial scale-up.",
+          "financial_outcome": "Redesigned heat exchange loop, yielding $4.2M NPV increase and 22% IRR improvement over 5 years.",
+          "impact_badge": "+$4.2M NPV Boost",
+          "image": "https://images.unsplash.com/photo-1670689334799-cdc6777db8cc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwyfHxjaGVtaWNhbCUyMGVuZ2luZWVyaW5nJTIwaW5kdXN0cmlhbCUyMHBsYW50JTIwZXhlY3V0aXZlfGVufDB8fHx8MTc5MTIwOTgxNXww&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": "cs-2",
+          "title": "Cellulosic Biomass Refinery Feasibility & M&A Due Diligence",
+          "sector": "Renewables & Bio-Based Materials",
+          "technical_problem": "Inconsistent feedstock viscosity resulting in unpredictable pump degradation and downtime.",
+          "financial_outcome": "Formulated proprietary pre-treatment process; structured $32M M&A acquisition model validated by tier-1 PE sponsors.",
+          "impact_badge": "$32M Acquisition Deal",
+          "image": "https://images.unsplash.com/photo-1726731782158-fcf6822b6ca4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxjaGVtaWNhbCUyMGVuZ2luZWVyaW5nJTIwaW5kdXN0cmlhbCUyMHBsYW50JTIwZXhlY3V0aXZlfGVufDB8fHx8MTc5MTIwOTgxNXww&ixlib=rb-4.1.0&q=85"
+        },
+        {
+          "id": "cs-3",
+          "title": "Corporate Capital Reallocation & Synthetic Fuel Commercialization",
+          "sector": "Energy Transition & Corporate Finance",
+          "technical_problem": "High green hydrogen input cost rendering synthetic fuel unit economics non-viable.",
+          "financial_outcome": "Optimized power purchasing agreements and electrolyzer efficiency, cutting breakeven oil price equivalent from $140/bbl to $82/bbl.",
+          "impact_badge": "41% Unit Cost Reduction",
+          "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwyfHxmaW5hbmNpYWwlMjBtYXJrZXQlMjBzdG9jayUyMGFuYWx5dGljcyUyMGRhc2hib2FyZCUyMHNjcmVlbnxlbnwwfHx8fDE3OTEyMDk4MjR8MA&ixlib=rb-4.1.0&q=85"
+        }
+      ]
+    },
+    "section_4_advisory_contact": {
+      "title": "ADVISORY CONTACT & BOOKINGS",
+      "layout": "Split Layout: Interactive Booking Form + Live Public Advisory Requests Table",
+      "booking_form": {
+        "fields": ["Full Name", "Email Address", "Company / Organization", "Advisory Topic", "Preferred Date & Time", "Project Brief"],
+        "topics": ["Corporate Strategy & M&A", "Technical Due Diligence", "Equity Analysis & Valuation", "Chemical Process Scaling", "Board Advisory"]
+      },
+      "public_bookings_table": {
+        "title": "Recent Consultation Requests (Live Data Table)",
+        "privacy": "Emails are masked (e.g., j***@domain.com) for confidentiality",
+        "columns": ["Client / Company", "Advisory Topic", "Preferred Date", "Status"]
+      }
+    },
+    "page_market_analysis": {
+      "title": "MARKET ANALYSIS & COMMENTARY",
+      "description": "In-depth insights, equity valuation notes, macro analysis, and chemical sector research by Itumeleng D. Kgongwane.",
+      "categories": ["All Articles", "Equities & Valuation", "Macro & Commodities", "Chemical Industry Trends", "Energy Transition & Fintech"],
+      "features": [
+        "Category filtering and keyword search",
+        "Full modal or article reader view with clean typography",
+        "One-click 'Share on LinkedIn' integration",
+        "Admin mode toggle / modal to post new articles & edit commentary"
+      ]
+    }
+  },
+  "motion_and_animations": {
+    "library": "framer-motion",
+    "smooth_scroll": "lenis smooth scrolling",
+    "hero_reveal": "Masked line-by-line reveal of headline and subhead",
+    "scroll_animations": "Staggered fade-up for bento cards, timeline nodes, and case study cards",
+    "hover_effects": "Steven Bartlett style social icons (overflow slide effect), glow borders on cards, scale-102 transform on CTA buttons"
+  },
+  "component_path": "/app/frontend/src/components",
+  "instructions_to_main_agent": [
+    "Ensure all interactive components (buttons, filters, forms, tabs) have clear data-testid attributes",
+    "Use strict dark theme palette (#0F172A base background, #1E293B surface card background, #38BDF8 ice blue accent, #F8FAFC crisp white text)",
+    "Build the hero split with the 3D / Canvas molecular lattice hero moment in Bento Box card #3",
+    "Implement the Steven Bartlett style social icons on both contact page and footer",
+    "Implement the public bookings table with masked email addresses",
+    "Implement full functional CRUD / local state for Market Analysis articles with 'Share on LinkedIn' button",
+    "Test responsiveness across desktop, tablet, and mobile displays"
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": "Follow all instructions in system prompt: dark slate #1E293B background, ice blue #38BDF8 accents, no raw transparent headers, data-testid on interactive elements, Lenis scroll, framer-motion micro-interactions."
+}
